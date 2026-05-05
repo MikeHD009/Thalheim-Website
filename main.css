@@ -1,0 +1,124 @@
+:root {
+    --gold_color: #d4af37;
+    --white_color: white;
+    --purpleblue_color: #1a1f3b;
+    --background_color: #1d1e20;
+}
+
+.main-box {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: var(--purpleblue_color);
+  border: 4px solid var(--gold_color);
+  border-radius: 12px;
+}
+
+h1, h2, h3 {
+  color: var(--gold_color);
+}
+
+p {
+    color: var(--white_color);
+    font-size: 1.2rem;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: var(--background_color);
+}
+
+.text h2 {
+  color: var(--gold_color);
+}
+
+.character {
+  margin-bottom: 20px;
+  border: 2px solid var(--gold_color);
+  padding: 15px;
+  background-color: var(--purpleblue_color);
+  cursor: pointer;
+  display: flex;
+  gap: 70px;
+}
+
+/* Overlay */
+.char-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 2px solid var(--gold_color);
+  border-radius: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.overlay-img {
+  width: 100%;
+  border-radius: 10%;
+  margin-bottom: 10px;
+}
+
+.backstory {
+  margin-top: 20px;
+}
+
+.char-card {
+  position: relative;
+  width: 150px;
+  text-align: center;
+}
+
+.char-img {
+  width: 200px;
+  border-radius: 10%;
+}
+
+.char-name {
+  margin-left: 50px;
+  margin-top: 8px;
+  color: var(--gold_color);
+}
+
+/* Hover Effekt */
+.char-card:hover .char-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Audio */
+.audio-container {
+  display: flex;
+  gap: 50px;
+}
+
+.audio-box {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.audio-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.audio-box audio {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+}
