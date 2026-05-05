@@ -98,8 +98,9 @@ body {
 
 /* Audio */
 .audio-container {
-  display: flex;
+  display: flex; 
   gap: 50px;
+  flex-wrap: wrap;
 }
 
 .audio-box {
