@@ -1,8 +1,8 @@
 :root {
-    --gold_color: #d4af37;
-    --white_color: white;
-    --purpleblue_color: #1a1f3b;
-    --background_color: #1d1e20;
+  --gold_color: #d4af37;
+  --white_color: white;
+  --purpleblue_color: #1a1f3b;
+  --background_color: #1d1e20;
 }
 
 .main-box {
@@ -19,8 +19,8 @@ h1, h2, h3 {
 }
 
 p {
-    color: var(--white_color);
-    font-size: 1.2rem;
+  color: var(--white_color);
+  font-size: 1.2rem;
 }
 
 section {
@@ -45,6 +45,7 @@ body {
   cursor: pointer;
   display: flex;
   gap: 70px;
+  flex-wrap: wrap;
 }
 
 /* Overlay */
