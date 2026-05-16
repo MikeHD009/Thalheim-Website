@@ -33,6 +33,10 @@ body {
   background-color: var(--background_color);
 }
 
+a {
+  color: white;
+}
+
 .text h2 {
   color: var(--gold_color);
 }
