@@ -398,11 +398,11 @@
         'browser.language': navigator.language,
         'telemetry.sdk.language': 'webjs',
       }),
+      spanProcessors: [
+        new SimpleSpanProcessor(new OTLPTraceExporter({ url: '/otlp/v1/traces' })),
+      ],
     });
 
-    provider.addSpanProcessor(
-            new SimpleSpanProcessor(new OTLPTraceExporter({ url: '/otlp/v1/traces' }))
-    );
     provider.register({ contextManager: new ZoneContextManager() });
 
     registerInstrumentations({
@@ -412,6 +412,6 @@
         new UserInteractionInstrumentation(),
       ],
     });
-  </script>
+</script>
 </body>
 </html>
