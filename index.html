@@ -298,7 +298,7 @@
             <source srcset="Assets/Musik_Images/avif/Genesaas_Audio_Image.avif" type="image/avif">
             <img src="Assets/Musik_Images/Genesaas_Audio_Image.png" title="Genesaas" alt="Genesaas">
           </picture>
-          <audio src="Assets/Musik/Genesaas.mp3" controls></audio>
+          <audio src="Assets/Musik/Genesaas.mp3" controls preload="none"></audio>
         </div>
 
         <!-- Der Auszug aus Fiss-Ladis -->
@@ -307,7 +307,7 @@
             <source srcset="Assets/Musik_Images/avif/Auszug_aus_Fiss-Ladis_Audio_Image.avif" type="image/avif">
             <img src="Assets/Musik_Images/Auszug_aus_Fiss-Ladis_Audio_Image.png" title="Der Auszug aus Fiss-Ladis" alt="Der Auszug aus Fiss-Ladis">
           </picture>
-          <audio src="Assets/Musik/Der Auszug aus Fiss-Ladis.mp3" controls></audio>
+          <audio src="Assets/Musik/Der Auszug aus Fiss-Ladis.mp3" controls preload="none"></audio>
         </div>
 
         <!-- Levisaastikus -->
@@ -316,7 +316,7 @@
             <source srcset="Assets/Musik_Images/avif/Levisaastikus_Audio_Image.avif" type="image/avif">
             <img src="Assets/Musik_Images/Levisaastikus_Audio_Image.png" title="Levisaastikus" alt="Levisaastikus">
           </picture>
-          <audio src="Assets/Musik/Levisaastikus.mp3" controls></audio>
+          <audio src="Assets/Musik/Levisaastikus.mp3" controls preload="none"></audio>
         </div>
 
         <!-- Silvana-unana Schöscher -->
@@ -325,7 +325,7 @@
             <source srcset="Assets/Musik_Images/avif/Silvana-unana_Schöscher_Audio_Image.avif" type="image/avif">
             <img src="Assets/Musik_Images/Silvana-unana_Schöscher_Audio_Image.png" title="Silvana-unana Schöscher" alt="Silvana-unana Schöscher">
           </picture>
-          <audio src="Assets/Musik/Silvana-unana Schöscher.mp3" controls></audio>
+          <audio src="Assets/Musik/Silvana-unana Schöscher.mp3" controls preload="none"></audio>
         </div>
 
       </div>
@@ -342,7 +342,7 @@
             <source srcset="Assets/Characters/avif/Ramona.avif" type="image/avif">
             <img src="Assets/Characters/Ramona.png" title="Ramona liebt den Kontenplan" alt="Ramona liebt den Kontenplan">
           </picture>
-          <audio src="Assets/Musik/Ramona liebt den Kontenplan Song.mp3" controls></audio>
+          <audio src="Assets/Musik/Ramona liebt den Kontenplan Song.mp3" controls preload="none"></audio>
         </div>
 
         <!-- Staubsauginer -->
@@ -351,7 +351,7 @@
             <source srcset="Assets/Characters/avif/Giner.avif" type="image/avif">
             <img src="Assets/Characters/Giner.png" title="Staubsauginer" alt="Staubsauginer">
           </picture>
-          <audio src="Assets/Musik/Staubsauginer.mp3" controls></audio>
+          <audio src="Assets/Musik/Staubsauginer.mp3" controls preload="none"></audio>
         </div>
 
         <!-- Tappeihnachtsmann -->
@@ -360,7 +360,7 @@
             <source srcset="Assets/Characters/avif/Tappeihnachtsmann.avif" type="image/avif">
             <img src="Assets/Characters/Tappeihnachtsmann.png" title="Tappeihnachtsmann" alt="Tappeihnachtsmann">
           </picture>
-          <audio src="Assets/Musik/Tappei-Weihnachtsmann.mp3" controls></audio>
+          <audio src="Assets/Musik/Tappei-Weihnachtsmann.mp3" controls preload="none"></audio>
         </div>
 
         <!-- Pöschl und Fröschl -->
@@ -369,7 +369,7 @@
             <source srcset="Assets/Characters/avif/P%C3%B6schl%20und%20Fr%C3%B6schl.avif" type="image/avif">
             <img src="Assets/Characters/Pöschl und Fröschl.png" title="Pöschl und Fröschl" alt="Pöschl und Fröschl">
           </picture>
-          <audio src="Assets/Musik/Pöschl und sein Fröschl Song.mp3" controls></audio>
+          <audio src="Assets/Musik/Pöschl und sein Fröschl Song.mp3" controls preload="none"></audio>
         </div>
 
       </div>
@@ -390,9 +390,9 @@
     import { FetchInstrumentation } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation-fetch@0.221.0/+esm';
     import { UserInteractionInstrumentation } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation-user-interaction@0.65.0/+esm';
     import { resourceFromAttributes } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/resources@2.10.0/+esm';
-    import { MeterProvider, PeriodicExportingMetricReader } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/sdk-metrics@1.25.0/+esm';
-    import { OTLPMetricExporter } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/exporter-metrics-otlp-http@0.52.0/+esm';
+    import { MeterProvider, PeriodicExportingMetricReader, AggregationTemporalityPreference } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/sdk-metrics@1.25.0/+esm';    import { OTLPMetricExporter } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/exporter-metrics-otlp-http@0.52.0/+esm';
     import { onLCP, onINP, onCLS, onFCP, onTTFB } from 'https://cdn.jsdelivr.net/npm/web-vitals@4.0.1/+esm';
+
 
     function getClientData() {
       const ua = navigator.userAgent;
@@ -447,31 +447,31 @@
     const meterProvider = new MeterProvider({ resource });
 
     const metricReader = new PeriodicExportingMetricReader({
-      exporter: new OTLPMetricExporter({ url: '/otlp/v1/metrics' }),
-      exportIntervalMillis: 10000,
+      exporter: new OTLPMetricExporter({
+        url: '/otlp/v1/metrics',
+        temporalityPreference: AggregationTemporalityPreference.DELTA
+      }),
+      exportIntervalMillis: 10000, // Flush every 10 seconds
     });
 
     meterProvider.addMetricReader(metricReader);
     const meter = meterProvider.getMeter('web-vitals');
 
-    // 1. Rename the metrics to exactly what OneUptime listens for
     const vitalsMetrics = {
-      LCP: meter.createHistogram('web_vital_lcp'),
-      INP: meter.createHistogram('web_vital_inp'),
-      CLS: meter.createHistogram('web_vital_cls'),
-      FCP: meter.createHistogram('web_vital_fcp'),
-      TTFB: meter.createHistogram('web_vital_ttfb')
+      LCP: meter.createHistogram('web_vitals.lcp', { description: 'Largest Contentful Paint', unit: 'ms' }),
+      INP: meter.createHistogram('web_vitals.inp', { description: 'Interaction to Next Paint', unit: 'ms' }),
+      CLS: meter.createHistogram('web_vitals.cls', { description: 'Cumulative Layout Shift', unit: '1' }),
+      FCP: meter.createHistogram('web_vitals.fcp', { description: 'First Contentful Paint', unit: 'ms' }),
+      TTFB: meter.createHistogram('web_vitals.ttfb', { description: 'Time to First Byte', unit: 'ms' })
     };
 
     const reportVital = (metric) => {
-      // 2. Add attributes so OneUptime can sort them by page and rating
       const attributes = {
-        web_vital_name: metric.name,
-        web_vital_rating: metric.rating, // "good", "needs-improvement", or "poor"
-        page_url: window.location.pathname
+        'vital_rating': metric.rating,
+        'page.path': window.location.pathname,
+        'page.url': window.location.href,
+        'page_url': window.location.pathname
       };
-
-      // Record the value alongside the attributes
       vitalsMetrics[metric.name].record(metric.value, attributes);
     };
 
@@ -484,7 +484,6 @@
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'hidden') {
         metricReader.forceFlush();
-        tracerProvider.forceFlush();
       }
     });
   </script>
