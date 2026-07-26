@@ -470,10 +470,16 @@
       const attributes = {
         'vital_rating': metric.rating,
         'page.path': window.location.pathname,
-        'page.url': window.location.href,
-        'page_url': window.location.pathname
+        'page.url': window.location.href
       };
+
       vitalsMetrics[metric.name].record(metric.value, attributes);
+
+      const vitalSpan = tracerProvider.getTracer('web-vitals').startSpan(`web-vitals.${metric.name.toLowerCase()}`);
+      vitalSpan.setAttribute('vital_value', metric.value);
+      vitalSpan.setAttribute('vital_rating', metric.rating);
+      vitalSpan.setAttribute('page.path', window.location.pathname);
+      vitalSpan.end();
     };
 
     onLCP(reportVital);
