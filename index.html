@@ -390,8 +390,9 @@
     import { FetchInstrumentation } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation-fetch@0.221.0/+esm';
     import { UserInteractionInstrumentation } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation-user-interaction@0.65.0/+esm';
     import { resourceFromAttributes } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/resources@2.10.0/+esm';
-    import { MeterProvider, PeriodicExportingMetricReader, AggregationTemporalityPreference } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/sdk-metrics@1.25.0/+esm';    import { OTLPMetricExporter } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/exporter-metrics-otlp-http@0.52.0/+esm';
-    import { onLCP, onINP, onCLS, onFCP, onTTFB } from 'https://cdn.jsdelivr.net/npm/web-vitals@4.0.1/+esm';
+    import { MeterProvider, PeriodicExportingMetricReader, AggregationTemporality } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/sdk-metrics@1.25.0/+esm';
+    import { OTLPMetricExporter } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/exporter-metrics-otlp-http@0.52.0/+esm';
+    import { onLCP, onINP, onCLS, onFCP, onTTFB } from 'https://cdn.jsdelivr.net/npm/web-vitals@4.0.1/+esm';;
 
 
     function getClientData() {
@@ -449,9 +450,9 @@
     const metricReader = new PeriodicExportingMetricReader({
       exporter: new OTLPMetricExporter({
         url: '/otlp/v1/metrics',
-        temporalityPreference: AggregationTemporalityPreference.DELTA
+        temporalityPreference: AggregationTemporality.DELTA
       }),
-      exportIntervalMillis: 10000, // Flush every 10 seconds
+      exportIntervalMillis: 10000,
     });
 
     meterProvider.addMetricReader(metricReader);
