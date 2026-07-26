@@ -445,24 +445,34 @@
     });
 
     const meterProvider = new MeterProvider({ resource });
-    meterProvider.addMetricReader(
-            new PeriodicExportingMetricReader({
-              exporter: new OTLPMetricExporter({ url: '/otlp/v1/metrics' }),
-            })
-    );
 
+    const metricReader = new PeriodicExportingMetricReader({
+      exporter: new OTLPMetricExporter({ url: '/otlp/v1/metrics' }),
+      exportIntervalMillis: 10000,
+    });
+
+    meterProvider.addMetricReader(metricReader);
     const meter = meterProvider.getMeter('web-vitals');
 
+    // 1. Rename the metrics to exactly what OneUptime listens for
     const vitalsMetrics = {
-      LCP: meter.createHistogram('LCP'),
-      INP: meter.createHistogram('INP'),
-      CLS: meter.createHistogram('CLS'),
-      FCP: meter.createHistogram('FCP'),
-      TTFB: meter.createHistogram('TTFB')
+      LCP: meter.createHistogram('web_vital_lcp'),
+      INP: meter.createHistogram('web_vital_inp'),
+      CLS: meter.createHistogram('web_vital_cls'),
+      FCP: meter.createHistogram('web_vital_fcp'),
+      TTFB: meter.createHistogram('web_vital_ttfb')
     };
 
     const reportVital = (metric) => {
-      vitalsMetrics[metric.name].record(metric.value);
+      // 2. Add attributes so OneUptime can sort them by page and rating
+      const attributes = {
+        web_vital_name: metric.name,
+        web_vital_rating: metric.rating, // "good", "needs-improvement", or "poor"
+        page_url: window.location.pathname
+      };
+
+      // Record the value alongside the attributes
+      vitalsMetrics[metric.name].record(metric.value, attributes);
     };
 
     onLCP(reportVital);
@@ -470,6 +480,13 @@
     onCLS(reportVital);
     onFCP(reportVital);
     onTTFB(reportVital);
+
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'hidden') {
+        metricReader.forceFlush();
+        tracerProvider.forceFlush();
+      }
+    });
   </script>
 </body>
 </html>
