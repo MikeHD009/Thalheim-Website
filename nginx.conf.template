@@ -11,7 +11,25 @@ server {
         try_files $uri $uri/ /index.html;
     }
 
-    location ~ ^/otlp/v1/(traces|metrics|logs)$ {
+    location /otlp/v1/traces {
+        proxy_pass ${ONEUPTIME_INGEST_URL};
+        proxy_set_header Host $proxy_host;
+        proxy_set_header x-oneuptime-token "${ONEUPTIME_TOKEN}";
+        proxy_ssl_server_name on;
+        resolver 8.8.8.8 1.1.1.1 valid=300s;
+        limit_req zone=rum_limit burst=20 nodelay;
+    }
+
+    location /otlp/v1/metrics {
+        proxy_pass ${ONEUPTIME_INGEST_URL};
+        proxy_set_header Host $proxy_host;
+        proxy_set_header x-oneuptime-token "${ONEUPTIME_TOKEN}";
+        proxy_ssl_server_name on;
+        resolver 8.8.8.8 1.1.1.1 valid=300s;
+        limit_req zone=rum_limit burst=20 nodelay;
+    }
+
+    location /otlp/v1/logs {
         proxy_pass ${ONEUPTIME_INGEST_URL};
         proxy_set_header Host $proxy_host;
         proxy_set_header x-oneuptime-token "${ONEUPTIME_TOKEN}";
