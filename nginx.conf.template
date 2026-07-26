@@ -11,7 +11,7 @@ server {
         try_files $uri $uri/ /index.html;
     }
 
-    location /otlp/v1/traces {
+    location ~ ^/otlp/v1/(traces|metrics|logs)$ {
         proxy_pass ${ONEUPTIME_INGEST_URL};
         proxy_set_header Host $proxy_host;
         proxy_set_header x-oneuptime-token "${ONEUPTIME_TOKEN}";
