@@ -1,346 +1,323 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="UTF-8">
-		<title>schoolmonsdex</title>
-		<link rel="stylesheet" href="CSS_Dateien/schoolmons.css">
-		<script src="Java_Script_Dateien/split_types.js" defer></script>
-	</head>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<title>Thalheim Gemeinschaft</title>
+	<link rel="stylesheet" href="main.css">
+</head>
+<body>
 
-	<body>
-		<div class="headline_top">
-			<h1 class="headline yellow" style="text-shadow: 50px 10px 10px var(--headline_color_blue);">Schoolmónsdex</h1> <!-- ;) -->
-		</div>
+<div class="main-box">
+	<header>
+		<h1>Thalheim Gemeinschaft</h1>
+	</header>
 
-		<div class="navigation">
-			<button onclick="prevSection()">⬅</button>
-			<span id="sectionTitle">Schoolmons</span>
-			<button onclick="nextSection()">➡</button>
-		</div>
-		
-		<!-- Schoolmóns suchen -->
-		<input type="text" id="search_input" placeholder="Pokémon suchen...">
+	<section>
+		<h2>Info</h2>
+		<p>Die Thalheim Gemeinschaft, gegründet von den Urtelheimern, ist eine Gemeinschaft, die Fantasy-Geschichten ausdenkt und diese
+			verschriftlicht. Die Charaktere in den Geschichten sind fiktiv, basieren teilweise aber auf echten Personen.
+			Die Geschichten sind frei erfunden und sollen niemanden beleidigen! Es ist nur ein Spaßprojekt, also bitte mit Humor genießen
+			oder einfach lassen.
+		</p>
+	</section>
 
-		<div id="schoolmonsFilters">
-			<div class="navigation">
-				<button data-type="all">Alle</button>
-				<button data-type="fire">Feuer</button>
-				<button data-type="water">Wasser</button>
-				<button data-type="electro">Elektro</button>
-				<button data-type="natur">Natur</button>
-				<button data-type="unlicht">Unlicht</button>
-				<button data-type="psycho">Psycho</button>
-				<button data-type="steel">Stahl</button>
-				<button data-type="fight">Kampf</button>
-				<button data-type="fairy">Fee</button>
-				<button data-type="dragon">Drache</button>
-				<button data-type="ice">Eis</button>
-				<button data-type="normal">Normal</button>
+	<section>
+		<h2>Charaktere</h2>
+
+		<div class="character">
+
+			<!-- Der Ewige Besen -->
+			<div class="char-card">
+				<img src="Assets/Characters/Der Ewige Besen.png" class="char-img">
+
+				<div class="char-name">Der Ewige Besen</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Der Ewige Besen.png" class="overlay-img">
+
+					<h3>Der Ewige Besen</h3>
+
+					<p class="backstory">
+						Von ihm geht alles aus. Der Ewige Besen hat alles, was existiert erschaffen und kann alles wieder vernichten. Er
+						ist der Wächter über Raum und Zeit.
+					</p>
+				</div>
 			</div>
-		</div>
-		
-		<div class="sections">
-		<!-- Schoolmons -->
-  		<div class="section active" id="schoolmons">
-			<div class="schoolmonbox">
 
-				<!-- Lehrer -->
-				<!-- Kaliwoda Thomas -->
-				<a href="Unterseiten/Schoolmons/Kaliwoda/Kaliwoda.html" class="box" data-name="Prof. Kaliwoda" data-type="natur">
-					<img class="boximage" src="Assets/Images/Schoolmons/Kaliwoda.png" alt="Kaliwoda Thomas">
-					<p class="boxnumber">NR. 01</p>
-					<p class="boxname">Prof. Kaliwoda</p>
-					<div class="boxabilities">
-						<p class="natur">Natur</p>
-					</div>
-				</a>
+			<!-- Di-Rex-j² -->
+			<div class="char-card">
+				<img src="Assets/Characters/Di-Rex-j².png" class="char-img">
 
-				<!-- Stobl Markus -->
-				<a href="Unterseiten/Schoolmons/Strobl/Strobl.html" class="box" data-name="Prof. Strobl" data-type="steel">
-					<img class="boximage" src="Assets/Images/Schoolmons/Strobl.png" alt="Stobl Markus">
-					<p class="boxnumber">NR. 02</p>
-					<p class="boxname">Prof. Strobl</p>
-					<div class="boxabilities">
-						<p class="steel">Stahl</p>
-					</div>
-				</a>
+				<div class="char-name">Di-Rex-j²</div>
 
-				<!-- Prof. Kilzer -->
-				<a href="Unterseiten/Schoolmons/Kilzer/Kilzer.html" class="box" data-name="Prof. Kilzer" data-type="fairy">
-					<img class="boximage" src="Assets/Images/Schoolmons/Kilzer.png" alt="Prof. Kilzer">
-					<p class="boxnumber">NR. 03</p>
-					<p class="boxname">Prof. Kilzer</p>
-					<div class="boxabilities">
-						<p class="fairy">Fee</p>
-					</div>
-				</a>
+				<div class="char-overlay">
+					<img src="Assets/Characters/Di-Rex-j².png" class="overlay-img">
 
-				<!-- Prof. Gstir -->
-				<a href="Unterseiten/Schoolmons/Gstir/Gstir.html" class="box" data-name="Prof. Gstir" data-type="electro">
-					<img class="boximage" src="Assets/Images/Schoolmons/Gstir.png" alt="Prof. Gstir">
-					<p class="boxnumber">NR. 04</p>
-					<p class="boxname">Prof. Gstir</p>
-					<div class="boxabilities">
-						<p class="electro">Elektro</p>
-					</div>
-				</a>
-
-				<!-- Prof. Ebster -->
-				<a href="Unterseiten/Schoolmons/Ebster/Ebster.html" class="box" data-name="Prof. Ebster" data-type="unlicht">
-					<img class="boximage" src="Assets/Images/Schoolmons/Ebster.png" alt="Prof. Ebster">
-					<p class="boxnumber">NR. 05</p>
-					<p class="boxname">Prof. Ebster</p>
-					<div class="boxabilities">
-						<p class="unlicht">Unlicht</p>
-					</div>
-				</a>
-
-				<!-- Prof. Bader -->
-				<a href="Unterseiten/Schoolmons/Bader/Bader.html" class="box" data-name="Prof. Bader" data-type="fire">
-					<img class="boximage" src="Assets/Images/Schoolmons/Bader.png" alt="Prof. Bader">
-					<p class="boxnumber">NR. 06</p>
-					<p class="boxname">Prof. Bader</p>
-					<div class="boxabilities">
-						<p class="fire">Feuer</p>
-					</div>
-				</a>
-
-				<!-- Prof. Tappeiner -->
-				<a href="Unterseiten/Schoolmons/Tappeiner/Tappeiner.html" class="box" data-name="Prof. Tappeiner" data-type="electro">
-					<img class="boximage" src="Assets/Images/Schoolmons/Tappeiner.png" alt="Prof. Tappeiner">
-					<p class="boxnumber">NR. 06</p>
-					<p class="boxname">Prof. Tappeiner</p>
-					<div class="boxabilities">
-						<p class="electro">Elektro</p>
-					</div>
-				</a>
-
-				<!-- Tappeihnachtsmann -->
-				<a href="Unterseiten/Schoolmons/Tappeihnachtsmann/Tappeihnachtsmann.html" class="box" data-name="Tappeihnachtsmann" data-type="ice">
-					<img class="boximage" src="Assets/Images/Schoolmons/Tappeihnachtsmann.png" alt="Tappeihnachtsmann">
-					<p class="boxnumber">NR. 06/2</p>
-					<p class="boxname">Tappeihnachtsmann</p>
-					<div class="boxabilities">
-						<p class="ice">Eis</p>
-					</div>
-				</a>
-
-				<!-- Prof. Steiner -->
-				<a href="Unterseiten/Schoolmons/Steiner/Steiner.html" class="box" data-name="Prof. Steiner" data-type="psycho">
-					<img class="boximage" src="Assets/Images/Schoolmons/Steiner.png" alt="Prof. Steiner">
-					<p class="boxnumber">NR. 07</p>
-					<p class="boxname">Prof. Steiner</p>
-					<div class="boxabilities">
-						<p class="psycho">Psycho</p>
-					</div>
-				</a>
-
-				<!-- Prof. Giner -->
-				<a href="Unterseiten/Schoolmons/Giner/Giner.html" class="box" data-name="Prof. Giner" data-type="unlicht">
-					<img class="boximage" src="Assets/Images/Schoolmons/Giner.png" alt="Prof. Giner">
-					<p class="boxnumber">NR. 08</p>
-					<p class="boxname">Prof. Giner</p>
-					<div class="boxabilities">
-						<p class="unlicht">Unlicht</p>
-					</div>
-				</a>
-
-				<!-- Prof. Neuner -->
-				<a href="Unterseiten/Schoolmons/Neuner/Neuner.html" class="box" data-name="Prof. Neuner" data-type="water">
-					<img class="boximage" src="Assets/Images/Schoolmons/Neuner.png" alt="Prof. Neuner">
-					<p class="boxnumber">NR. 09</p>
-					<p class="boxname">Prof. Neuner</p>
-					<div class="boxabilities">
-						<p class="water">Wasser</p>
-					</div>
-				</a>
-
-				<!-- Prof. Oberhöller -->
-				<a href="Unterseiten/Schoolmons/Oberhöller/Oberhöller.html" class="box" data-name="Prof. Oberhöller" data-type="natur">
-					<img class="boximage" src="Assets/Images/Schoolmons/Oberhöller.png" alt="Prof. Oberhöller">
-					<p class="boxnumber">NR. 10</p>
-					<p class="boxname">Prof. Oberhöller</p>
-					<div class="boxabilities">
-						<p class="natur">Natur</p>
-					</div>
-				</a>
-
-				<!-- Prof. Anrain -->
-				<a href="Unterseiten/Schoolmons/Anrain/Anrain.html" class="box" data-name="Prof. Anrain" data-type="normal">
-					<img class="boximage" src="Assets/Images/Schoolmons/Anrain.png" alt="Prof. Anrain">
-					<p class="boxnumber">NR. 11</p>
-					<p class="boxname">Prof. Anrain</p>
-					<div class="boxabilities">
-						<p class="normal">Normal</p>
-					</div>
-				</a>
-
-				<!-- Prof. Pleschberger -->
-				<a href="Unterseiten/Schoolmons/Pleschberger/Pleschberger.html" class="box" data-name="Prof. Pleschberger" data-type="fairy">
-					<img class="boximage" src="Assets/Images/Schoolmons/Pleschberger.png" alt="Prof. Pleschberger">
-					<p class="boxnumber">NR. 12</p>
-					<p class="boxname">Prof. Pleschberger</p>
-					<div class="boxabilities">
-						<p class="fairy">Fee</p>
-					</div>
-				</a>
-				
-				<!-- Schüler -->
-				<!-- Michael -->
-				<a href="Unterseiten/Schoolmons/Michael/Michael.html" class="box" data-name="Michael" data-type="natur">
-					<img class="boximage" src="Assets/Images/Schoolmons/Michael.png" alt="Michael">
-					<p class="boxnumber">NR. 13</p>
-					<p class="boxname">Michael</p>
-					<div class="boxabilities">
-						<p class="natur">Natur</p>
-					</div>
-				</a>
-
-				<!-- Paul -->
-				<a href="Unterseiten/Schoolmons/Paul/Paul.html" class="box" data-name="Paul" data-type="fire">
-					<img class="boximage" src="Assets/Images/Schoolmons/Paul.png" alt="Paul">
-					<p class="boxnumber">NR. 14</p>
-					<p class="boxname">Paul</p>
-					<div class="boxabilities">
-						<p class="fire">Feuer</p>
-					</div>
-				</a>
-
-				<!-- Raphael -->
-				<a href="Unterseiten/Schoolmons/Raphael/Raphael.html" class="box" data-name="Raphael" data-type="psycho">
-					<img class="boximage" src="Assets/Images/Schoolmons/Raphael.png" alt="Raphael">
-					<p class="boxnumber">NR. 15</p>
-					<p class="boxname">Raphael</p>
-					<div class="boxabilities">
-						<p class="psycho">Psycho</p>
-					</div>
-				</a>
-
-				<!-- Evelyn -->
-				<a href="Unterseiten/Schoolmons/Evelyn/Evelyn.html" class="box" data-name="Evelyn" data-type="unlicht">
-					<img class="boximage" src="Assets/Images/Schoolmons/Evelyn.png" alt="Evelyn">
-					<p class="boxnumber">NR. 16</p>
-					<p class="boxname">Evelyn</p>
-					<div class="boxabilities">
-						<p class="unlicht ">Unlicht</p>
-					</div>
-				</a>
-
-				<!-- Felix -->
-				<a href="Unterseiten/Schoolmons/Felix/Felix.html" class="box" data-name="Felix" data-type="ice">
-					<img class="boximage" src="Assets/Images/Schoolmons/Felix Moses.png" alt="Felix">
-					<p class="boxnumber">NR. 17</p>
-					<p class="boxname">Felix</p>
-					<div class="boxabilities">
-						<p class="ice">Eis</p>
-					</div>
-				</a>
-
-				<!-- Leandertaler -->
-				<a href="Unterseiten/Schoolmons/Leander/Leander.html" class="box" data-name="Leandertaler" data-type="psycho">
-					<img class="boximage" src="Assets/Images/Schoolmons/Leandertaler.png" alt="Leandertaler">
-					<p class="boxnumber">NR. 18</p>
-					<p class="boxname">Leandertaler</p>
-					<div class="boxabilities">
-						<p class="psycho">Psycho</p>
-					</div>
-				</a>
-
-				<!-- David -->
-				<a href="Unterseiten/Schoolmons/David/David.html" class="box" data-name="David" data-type="fight">
-					<img class="boximage" src="Assets/Images/Schoolmons/David.png" alt="David">
-					<p class="boxnumber">NR. 19</p>
-					<p class="boxname">David</p>
-					<div class="boxabilities">
-						<p class="fight">Kampf</p>
-					</div>
-				</a>
-
-				<!-- Laurin -->
-				<a href="Unterseiten/Schoolmons/Laurin/Laurin.html" class="box" data-name="Laurin" data-type="normal">
-					<img class="boximage" src="Assets/Images/Schoolmons/Laurin.png" alt="Laurin">
-					<p class="boxnumber">NR. 20</p>
-					<p class="boxname">Laurin</p>
-					<div class="boxabilities">
-						<p class="normal">Normal</p>
-					</div>
-				</a>
-
-				<!-- Berat -->
-				<a href="Unterseiten/Schoolmons/Berat/Berat.html" class="box" data-name="Berat" data-type="fire">
-					<img class="boximage" src="Assets/Images/Schoolmons/Berat.png" alt="Berat">
-					<p class="boxnumber">NR. 21</p>
-					<p class="boxname">Berat</p>
-					<div class="boxabilities">
-						<p class="fire">Feuer</p>
-					</div>
-				</a>
+					<h3>Di-Rex-j²</h3>
+					<p class="backstory">
+						Er wurde vom Ewigen Besen erschaffen. Von ihm stammen die Universen, Tiere und Menschen. Er schenkte uns das Leben,
+						genau wie er den Universen Leben schenkte.
+					</p>
+				</div>
 			</div>
-		</div>
 
-		<!-- Orte -->
-		<div class="section" id="orte">
-			<div class="schoolmonbox">
+			<!-- Die Henne -->
+			<div class="char-card">
+				<img src="Assets/Characters/Die Henne.png" class="char-img">
 
-				<a href="Unterseiten/Orte/Das finstere Loch/Das finstere Loch.html" class="box">
-					<img class="boximage" src="Assets/Images/Orte/Das finstere Loch.png" alt="Das finstere Loch">
-					<p class="boxnumber">NR. 01</p>
-					<p class="boxname">Das finstere Loch</p>
-				</a>
+				<div class="char-name">Die Henne</div>
 
-				<a href="Unterseiten/Orte/Hofer/Hofer.html" class="box">
-					<img class="boximage" src="Assets/Images/Orte/Hofer.png" alt="Hofer">
-					<p class="boxnumber">NR. 02</p>
-					<p class="boxname">Hofer</p>
-				</a>
+				<div class="char-overlay">
+					<img src="Assets/Characters/Die Henne.png" class="overlay-img">
+
+					<h3>Die Henne</h3>
+					<p class="backstory">
+						Die Henne kam aus dem Di-Rex-j². Von dieser stammen alle Tiere der Welt ab und Saasam und Sesam.
+					</p>
+				</div>
 			</div>
-		</div>
 
-		<!-- Items -->
-		<div class="section" id="items">
-			<div class="schoolmonbox">
-				
-				<!-- Pfandflasche -->
-				<a href="Unterseiten/Items/Pfandflasche/Pfandflasche.html" class="box">
-					<img class="boximage" src="Assets/Images/Trainer/Items/Pfandflasche.png">
-					<p class="boxnumber">NR. 01</p>
-					<p class="boxname">Pfandflasche</p>
-				</a>
-				
-				<!-- Der Ewige Besen -->
-				<a href="Unterseiten/Items/Der Ewige Besen/Der Ewige Besen.html" class="box">
-					<img class="boximage" src="Assets/Images/Trainer/Items/Der ewige Besen.png">
-					<p class="boxnumber">NR. 02</p>
-					<p class="boxname">Der Ewige Besen</p>
-				</a>
+			<!-- Das Ei -->
+			<div class="char-card">
+				<img src="Assets/Characters/Das Ei.png" class="char-img">
 
-				<!-- Talheim Heilwasser -->
-				<a href="Unterseiten/Items/Talheim Heilwasser/Talheim Heilwasser.html" class="box">
-					<img class="boximage" src="Assets/Images/Trainer/Items/Talheim Heilwasser.png">
-					<p class="boxnumber">NR. 03</p>
-					<p class="boxname">Talheim Heilwasser</p>
-				</a>
+				<div class="char-name">Das Ei</div>
 
-				<!-- Zeugnis Note F -->
-				<a href="Unterseiten/Items/Zeugnis Note F/Zeugnis Note F.html" class="box">
-					<img class="boximage" src="Assets/Images/Trainer/Items/Zeugnis Note F.png">
-					<p class="boxnumber">NR. 04</p>
-					<p class="boxname">Zeugnis Note F</p>
-				</a>
+				<div class="char-overlay">
+					<img src="Assets/Characters/Das Ei.png" class="overlay-img">
 
-				<!-- Sledge Hammer -->
-				<a href="Unterseiten/Items/Sledge Hammer/Sledge Hammer.html" class="box">
-					<img class="boximage" src="Assets/Images/Trainer/Items/Sledge Hammer.png">
-					<p class="boxnumber">NR. 05</p>
-					<p class="boxname">Screwdriver</p>
-				</a>
-
+					<h3>Das Ei</h3>
+					<p class="backstory">
+						Das Ei kam aus dem Di-Rex-j². Aus diesem sind alle Universen entstanden. Jede Borste des Ewigen Besens steht für
+						ein Universum.
+					</p>
+				</div>
 			</div>
-		</div>
 
-		<script src="Java_Script_Dateien/search_function.js" defer></script>
-	</body>
-	<footer>
-		<a href="Impressum.html">Impressum</a>
-	</footer>		
+			<!-- Thalheim Heilwasser -->
+			<div class="char-card">
+				<img src="Assets/Characters/Thalheim Heilwasser.png" class="char-img">
+
+				<div class="char-name">Thalheim Heilwasser</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Thalheim Heilwasser.png" class="overlay-img">
+
+					<h3>Thalheim Heilwasser</h3>
+					<p class="backstory">
+						Es kommt aus einer Quelle an der Südkette. Pöschl und sein Fröschl haben sich mit Ramona zusammengetan, um das
+						ultraviolette Thalheim Heilwasser zu verkaufen.
+					</p>
+				</div>
+			</div>
+
+			<!-- Ramona -->
+			<div class="char-card">
+				<img src="Assets/Characters/Ramona.png" class="char-img">
+
+				<div class="char-name">Ramona</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Ramona.png" class="overlay-img">
+
+					<h3>Ramona</h3>
+					<p class="backstory">
+						Nachdem Ramona einen Abgang gemacht hat, wurde sie ein Mitglied der Thalheim Gemeinschaft. Ihr
+						Kontenplan wies ihr den Weg und so verkaufte sie, gemeinsam mit Pöschl und seinem Fröschl, das
+						Thalheim Heilwasser.
+					</p>
+				</div>
+			</div>
+
+			<!-- Staubsauginer -->
+			<div class="char-card">
+				<img src="Assets/Characters/Giner.png" class="char-img">
+
+				<div class="char-name">Staubsauginer</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Giner.png" class="overlay-img">
+
+					<h3>Staubsauginer</h3>
+					<p class="backstory">
+						Er zieht die Fehler aus dem Heft, baute eine Pestmauer in Thaur und ist ein Urthalheimer. Mit seinem
+						Staubsauger zieht er durchs Land. Er hasst Feuerpfeile und macht aus Vogelkot Schwarzpulver.
+					</p>
+				</div>
+			</div>
+
+			<!-- Tappeihnachtsmann -->
+			<div class="char-card">
+				<img src="Assets/Characters/Tappeihnachtsmann.png" class="char-img">
+
+				<div class="char-name">Tappeihnachtsmann</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Tappeihnachtsmann.png" class="overlay-img">
+
+					<h3>Tappeihnachtsmann</h3>
+					<p class="backstory">
+						An Weihnachten hat er viel zu tun und ist den ganzen Tag unterwegs. Als Urthalheimer geht er aber
+						seinen Pflichten nach, mit den anderen zu brehten.
+					</p>
+				</div>
+			</div>
+
+			<!-- Steinermike -->
+			<div class="char-card">
+				<img src="Assets/Characters/Steinermike.png" class="char-img">
+
+				<div class="char-name">Steinermike</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Steinermike.png" class="overlay-img">
+
+					<h3>Steinermike</h3>
+					<p class="backstory">
+						Er lebte in einer Höhle auf der Südkette und wurde von Martin gefunden, als dieser die Gesteinsarten
+						untersuchte. Seine Fähigkeit besteht darin, durch Dynamit unter den Füßen zu hüpfen.
+					</p>
+				</div>
+			</div>
+
+			<!-- Felix Moses -->
+			<div class="char-card">
+				<img src="Assets/Characters/Felix Moses.png" class="char-img">
+
+				<div class="char-name">Felix Moses</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Felix Moses.png" class="overlay-img">
+
+					<h3>Felix Moses</h3>
+					<p class="backstory">
+						Er teilte den Schnee, um seine Gruppe sicher nach Hause zu bringen. Der Ewige Besen überbrachte ihm
+						die Gebrohte, welche bis heute in der Gemeinschaft bekannt sind.
+					</p>
+				</div>
+			</div>
+
+			<!-- Pöschl und Fröschl -->
+			<div class="char-card">
+				<img src="Assets/Characters/Pöschl und Fröschl.png" class="char-img">
+
+				<div class="char-name">Pöschl und Fröschl</div>
+
+				<div class="char-overlay">
+					<img src="Assets/Characters/Pöschl und Fröschl.png" class="overlay-img">
+
+					<h3>Pöschl und Fröschl</h3>
+					<p class="backstory">
+						Pöschl und sein Fröschl entdeckten die Ewige Thalheim Heilwasser Quelle. Zusammen mit Ramona
+						verkauften sie das Thalheim Heilwasser in ganz Thalheim.
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section>
+		<h2>Die Biba</h2>
+		<a href="Assets/Biba_Word/Die Biba.docx">Hier zum Download</a>
+	</section>
+
+	<section>
+		<h2>Gesungene Biba</h2>
+
+		<div class="audio-container">
+
+			<!-- Genesaas -->
+			<div class="audio-box">
+				<img src="Assets/Musik_Images/Genesaas_Audio_Image.png" title="Genesaas">
+				<audio src="Assets/Musik/Genesaas.mp3" controls></audio>
+			</div>
+
+			<!-- Der Auszug aus Fiss-Ladis -->
+			<div class="audio-box">
+				<img src="Assets/Musik_Images/Auszug_aus_Fiss-Ladis_Audio_Image.png" title="Der Auszug aus Fiss-Ladis">
+				<audio src="Assets/Musik/Der Auszug aus Fiss-Ladis.mp3" controls></audio>
+			</div>
+
+			<!-- Levisaastikus -->
+			<div class="audio-box">
+				<img src="Assets/Musik_Images/Levisaastikus_Audio_Image.png" title="Levisaastikus">
+				<audio src="Assets/Musik/Levisaastikus.mp3" controls></audio>
+			</div>
+
+			<!-- David der Säufer -->
+			<div class="audio-box">
+				<img src="Assets/Musik_Images/David_der_Säufer_Image.png" title="David der Säufer">
+				<audio src="Assets/Musik/David der Säufer.mp3" controls></audio>
+			</div>
+
+			<!-- Silvana-unana Schöscher -->
+			<div class="audio-box">
+				<img src="Assets/Musik_Images/Silvana-unana_Schöscher_Audio_Image.png" title="Silvana-unana Schöscher">
+				<audio src="Assets/Musik/Silvana-unana Schöscher.mp3" controls></audio>
+			</div>
+
+			<!-- Die traurige Botschaft -->
+			<div class="audio-box">
+				<img src="Assets/Musik_Images/Die_traurige_Botschaft_Image.png" title="Die traurige Botschaft">
+				<audio src="Assets/Musik/Die traurige Botschaft.mp3" controls></audio>
+			</div>
+
+			<!-- Das letzte Abendsaas -->
+			<div class="audio-box">
+				<img src="Assets/Musik_Images/Das_letzte_Abendsaas_Image.png" title="Das letzte Abendsaas">
+				<audio src="Assets/Musik/Das letzte Abendsaas.mp3" controls></audio>
+			</div>
+
+		</div>
+	</section>
+
+	<section>
+		<h2>Lieder der Urthalheimer</h2>
+
+		<div class="audio-container">
+
+			<!-- Ramona liebt den Kontenplan -->
+			<div class="audio-box">
+				<img src="Assets/Characters/Ramona.png" title="Ramona liebt den Kontenplan">
+				<audio src="Assets/Musik/Ramona liebt den Kontenplan Song.mp3" controls></audio>
+			</div>
+
+			<!-- Staubsauginer -->
+			<div class="audio-box">
+				<img src="Assets/Characters/Giner.png" title="Staubsauginer">
+				<audio src="Assets/Musik/Staubsauginer.mp3" controls></audio>
+			</div>
+
+			<!-- Tappeihnachtsmann -->
+			<div class="audio-box">
+				<img src="Assets/Characters/Tappeihnachtsmann.png" title="Tappeihnachtsmann">
+				<audio src="Assets/Musik/Tappei-Weihnachtsmann.mp3" controls></audio>
+			</div>
+
+			<!-- Pöschl und Fröschl -->
+			<div class="audio-box">
+				<img src="Assets/Characters/Pöschl und Fröschl.png" title="Pöschl und Fröschl">
+				<audio src="Assets/Musik/Pöschl und sein Fröschl Song.mp3" controls></audio>
+			</div>
+
+			<!-- Steinermike -->
+			<div class="audio-box">
+				<img src="Assets/Characters/Steinermike.png" title="Steinermike">
+				<audio src="Assets/Musik/Steinermike Song.mp3" controls></audio>
+			</div>
+
+		</div>
+	</section>
+
+	<section>
+		<h2>Weitere Infos</h2>
+
+		<p>Bilder wurden teilweise mit <a href="https://chatgpt.com" target="_blank">ChatGPT</a> und <a href="https://bylo.ai/features/pokemon-generator" target="_blank">Bylo AI</a> erstellt.</p>
+		<p>Die Lieder stammen von <a href="https://suno.com" target="_blank">Suno AI</a>.</p>
+	</section>
+
+</div>
+
+</body>
 </html>
