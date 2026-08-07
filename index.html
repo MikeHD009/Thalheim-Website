@@ -230,43 +230,43 @@
 			<!-- Genesaas -->
 			<div class="audio-box">
 				<img src="Assets/Musik_Images/Genesaas_Audio_Image.png" title="Genesaas">
-				<audio src="Assets/Musik/Genesaas.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Genesaas.mp3" controls></audio>
 			</div>
 
 			<!-- Der Auszug aus Fiss-Ladis -->
 			<div class="audio-box">
 				<img src="Assets/Musik_Images/Auszug_aus_Fiss-Ladis_Audio_Image.png" title="Der Auszug aus Fiss-Ladis">
-				<audio src="Assets/Musik/Der Auszug aus Fiss-Ladis.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Der Auszug aus Fiss-Ladis.mp3" controls></audio>
 			</div>
 
 			<!-- Levisaastikus -->
 			<div class="audio-box">
 				<img src="Assets/Musik_Images/Levisaastikus_Audio_Image.png" title="Levisaastikus">
-				<audio src="Assets/Musik/Levisaastikus.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Levisaastikus.mp3" controls></audio>
 			</div>
 
 			<!-- David der Säufer -->
 			<div class="audio-box">
 				<img src="Assets/Musik_Images/David_der_Säufer_Image.png" title="David der Säufer">
-				<audio src="Assets/Musik/David der Säufer.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/David der Säufer.mp3" controls></audio>
 			</div>
 
 			<!-- Silvana-unana Schöscher -->
 			<div class="audio-box">
 				<img src="Assets/Musik_Images/Silvana-unana_Schöscher_Audio_Image.png" title="Silvana-unana Schöscher">
-				<audio src="Assets/Musik/Silvana-unana Schöscher.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Silvana-unana Schöscher.mp3" controls></audio>
 			</div>
 
 			<!-- Die traurige Botschaft -->
 			<div class="audio-box">
 				<img src="Assets/Musik_Images/Die_traurige_Botschaft_Image.png" title="Die traurige Botschaft">
-				<audio src="Assets/Musik/Die traurige Botschaft.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Die traurige Botschaft.mp3" controls></audio>
 			</div>
 
 			<!-- Das letzte Abendsaas -->
 			<div class="audio-box">
 				<img src="Assets/Musik_Images/Das_letzte_Abendsaas_Image.png" title="Das letzte Abendsaas">
-				<audio src="Assets/Musik/Das letzte Abendsaas.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Das letzte Abendsaas.mp3" controls></audio>
 			</div>
 
 		</div>
@@ -280,31 +280,31 @@
 			<!-- Ramona liebt den Kontenplan -->
 			<div class="audio-box">
 				<img src="Assets/Characters/Ramona.png" title="Ramona liebt den Kontenplan">
-				<audio src="Assets/Musik/Ramona liebt den Kontenplan Song.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Ramona liebt den Kontenplan Song.mp3" controls></audio>
 			</div>
 
 			<!-- Staubsauginer -->
 			<div class="audio-box">
 				<img src="Assets/Characters/Giner.png" title="Staubsauginer">
-				<audio src="Assets/Musik/Staubsauginer.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Staubsauginer.mp3" controls></audio>
 			</div>
 
 			<!-- Tappeihnachtsmann -->
 			<div class="audio-box">
 				<img src="Assets/Characters/Tappeihnachtsmann.png" title="Tappeihnachtsmann">
-				<audio src="Assets/Musik/Tappei-Weihnachtsmann.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Tappei-Weihnachtsmann.mp3" controls></audio>
 			</div>
 
 			<!-- Pöschl und Fröschl -->
 			<div class="audio-box">
 				<img src="Assets/Characters/Pöschl und Fröschl.png" title="Pöschl und Fröschl">
-				<audio src="Assets/Musik/Pöschl und sein Fröschl Song.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Pöschl und sein Fröschl Song.mp3" controls></audio>
 			</div>
 
 			<!-- Steinermike -->
 			<div class="audio-box">
 				<img src="Assets/Characters/Steinermike.png" title="Steinermike">
-				<audio src="Assets/Musik/Steinermike Song.mp3" controls></audio>
+				<audio preload="none" src="Assets/Musik/Steinermike Song.mp3" controls></audio>
 			</div>
 
 		</div>
@@ -318,6 +318,119 @@
 	</section>
 
 </div>
+<script type="module">
+	import { WebTracerProvider } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/sdk-trace-web@2.10.0/+esm';
+	import { BatchSpanProcessor } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/sdk-trace-base@2.10.0/+esm';
+	import { OTLPTraceExporter } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/exporter-trace-otlp-http@0.221.0/+esm';
+	import { ZoneContextManager } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/context-zone@2.10.0/+esm';
+	import { registerInstrumentations } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation@0.221.0/+esm';
+	import { DocumentLoadInstrumentation } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation-document-load@0.66.0/+esm';
+	import { FetchInstrumentation } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation-fetch@0.221.0/+esm';
+	import { UserInteractionInstrumentation } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/instrumentation-user-interaction@0.65.0/+esm';
+	import { resourceFromAttributes } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/resources@2.10.0/+esm';
+	import { MeterProvider, PeriodicExportingMetricReader, AggregationTemporality } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/sdk-metrics@1.25.0/+esm';
+	import { OTLPMetricExporter } from 'https://cdn.jsdelivr.net/npm/@opentelemetry/exporter-metrics-otlp-http@0.52.0/+esm';
+	import { onLCP, onINP, onCLS, onFCP, onTTFB } from 'https://cdn.jsdelivr.net/npm/web-vitals@4.0.1/+esm';;
 
+
+	function getClientData() {
+		const ua = navigator.userAgent;
+		let brand = 'Unknown';
+		let platform = 'Unknown';
+
+		if (ua.includes('Firefox/')) brand = 'Firefox';
+		else if (ua.includes('Edg/')) brand = 'Edge';
+		else if (ua.includes('OPR/') || ua.includes('Opera/')) brand = 'Opera';
+		else if (ua.includes('Chrome/')) brand = 'Chrome';
+		else if (ua.includes('Safari/') && !ua.includes('Chrome/')) brand = 'Safari';
+
+		if (ua.includes('Win')) platform = 'Windows';
+		else if (ua.includes('Mac')) platform = 'macOS';
+		else if (ua.includes('Android')) platform = 'Android';
+		else if (ua.includes('iPhone') || ua.includes('iPad')) platform = 'iOS';
+		else if (ua.includes('Linux')) platform = 'Linux';
+
+		const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile/i.test(ua);
+		return { brand, platform, isMobile };
+	}
+
+	const client = getClientData();
+
+	const resource = resourceFromAttributes({
+		'service.name': 'thalheim-website',
+		'browser.brand': client.brand,
+		'browser.platform': client.platform,
+		'browser.mobile': client.isMobile,
+		'browser.language': navigator.language,
+		'telemetry.sdk.language': 'webjs',
+	});
+
+	const tracerProvider = new WebTracerProvider({
+		resource,
+		spanProcessors: [
+			new BatchSpanProcessor(new OTLPTraceExporter({ url: '/otlp/v1/traces' })),
+		],
+	});
+
+	tracerProvider.register({ contextManager: new ZoneContextManager() });
+
+	registerInstrumentations({
+		tracerProvider,
+		instrumentations: [
+			new DocumentLoadInstrumentation(),
+			new FetchInstrumentation(),
+			new UserInteractionInstrumentation(),
+		],
+	});
+
+	const meterProvider = new MeterProvider({ resource });
+
+	const metricReader = new PeriodicExportingMetricReader({
+		exporter: new OTLPMetricExporter({
+			url: '/otlp/v1/metrics',
+			temporalityPreference: AggregationTemporality.DELTA
+		}),
+		exportIntervalMillis: 10000,
+	});
+
+	meterProvider.addMetricReader(metricReader);
+	const meter = meterProvider.getMeter('web-vitals');
+
+	const vitalsMetrics = {
+		LCP: meter.createHistogram('web_vitals.lcp', { description: 'Largest Contentful Paint', unit: 'ms' }),
+		INP: meter.createHistogram('web_vitals.inp', { description: 'Interaction to Next Paint', unit: 'ms' }),
+		CLS: meter.createHistogram('web_vitals.cls', { description: 'Cumulative Layout Shift', unit: '1' }),
+		FCP: meter.createHistogram('web_vitals.fcp', { description: 'First Contentful Paint', unit: 'ms' }),
+		TTFB: meter.createHistogram('web_vitals.ttfb', { description: 'Time to First Byte', unit: 'ms' })
+	};
+
+	const reportVital = (metric) => {
+		const attributes = {
+			'vital_rating': metric.rating,
+			'page.path': window.location.pathname,
+			'page.url': window.location.href
+		};
+
+		vitalsMetrics[metric.name].record(metric.value, attributes);
+
+		const vitalSpan = tracerProvider.getTracer('web-vitals').startSpan(`web-vitals.${metric.name.toLowerCase()}`);
+		vitalSpan.setAttribute('vital_value', metric.value);
+		vitalSpan.setAttribute('vital_rating', metric.rating);
+		vitalSpan.setAttribute('page.path', window.location.pathname);
+		vitalSpan.end();
+	};
+
+	onLCP(reportVital);
+	onINP(reportVital);
+	onCLS(reportVital);
+	onFCP(reportVital);
+	onTTFB(reportVital);
+
+	document.addEventListener('visibilitychange', () => {
+		if (document.visibilityState === 'hidden') {
+			metricReader.forceFlush();
+		}
+	});
+</script>
 </body>
 </html>
