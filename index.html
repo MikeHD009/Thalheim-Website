@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-363SJP3E38"></script>
+	<!-- Load Google Analytics after the first interaction. -->
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
-
 		gtag('config', 'G-363SJP3E38');
+
+		(() => {
+			const controller = new AbortController();
+			function loadAnalytics() {
+				controller.abort();
+				const script = document.createElement('script');
+				script.async = true;
+				script.src = 'https://www.googletagmanager.com/gtag/js?id=G-363SJP3E38';
+				document.head.appendChild(script);
+			}
+			for (const event of ['pointerdown', 'keydown', 'scroll']) {
+				window.addEventListener(event, loadAnalytics, {
+					once: true,
+					passive: true,
+					signal: controller.signal,
+				});
+			}
+		})();
 	</script>
 	<meta charset="UTF-8">
 	<title>Thalheim Gemeinschaft</title>
 	<meta name="description" content="Entdecke die Thalheim Gemeinschaft: humorvolle Fantasy-Geschichten, fiktive Charaktere, „Die Biba“ und Lieder aus der Welt von Thalheim.">
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="main.css?v=f7646f6967eb">
+	<link rel="preload" as="image" href="Assets/Musik_Images/avif/Genesaas_Audio_Image.avif?v=4372e6f9fc26" type="image/avif" fetchpriority="high">
 </head>
 <body>
 
@@ -39,16 +56,16 @@
 			<!-- Der Ewige Besen -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Der%20Ewige%20Besen.avif" type="image/avif">
-					<img src="Assets/Characters/Der Ewige Besen.png" class="char-img" alt="Der Ewige Besen">
+					<source srcset="Assets/Characters/avif/Der%20Ewige%20Besen.avif?v=7457ec996022" type="image/avif">
+					<img src="Assets/Characters/Der Ewige Besen.png?v=53bbf6466e35" class="char-img" alt="Der Ewige Besen">
 				</picture>
 
 				<div class="char-name">Der Ewige Besen</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Der%20Ewige%20Besen.avif" type="image/avif">
-						<img src="Assets/Characters/Der Ewige Besen.png" class="overlay-img" alt="Der Ewige Besen">
+						<source srcset="Assets/Characters/avif/Der%20Ewige%20Besen.avif?v=7457ec996022" type="image/avif">
+						<img src="Assets/Characters/Der Ewige Besen.png?v=53bbf6466e35" class="overlay-img" alt="Der Ewige Besen">
 					</picture>
 
 					<h3>Der Ewige Besen</h3>
@@ -63,16 +80,16 @@
 			<!-- Di-Rex-j² -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Di-Rex-j%C2%B2.avif" type="image/avif">
-					<img src="Assets/Characters/Di-Rex-j².png" class="char-img" alt="Di-Rex-j²">
+					<source srcset="Assets/Characters/avif/Di-Rex-j%C2%B2.avif?v=35355ae3923c" type="image/avif">
+					<img src="Assets/Characters/Di-Rex-j².png?v=fc6e7006b109" class="char-img" alt="Di-Rex-j²">
 				</picture>
 
 				<div class="char-name">Di-Rex-j²</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Di-Rex-j%C2%B2.avif" type="image/avif">
-						<img src="Assets/Characters/Di-Rex-j².png" class="overlay-img" alt="Di-Rex-j²">
+						<source srcset="Assets/Characters/avif/Di-Rex-j%C2%B2.avif?v=35355ae3923c" type="image/avif">
+						<img src="Assets/Characters/Di-Rex-j².png?v=fc6e7006b109" class="overlay-img" alt="Di-Rex-j²">
 					</picture>
 
 					<h3>Di-Rex-j²</h3>
@@ -86,16 +103,16 @@
 			<!-- Die Henne -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Die%20Henne.avif" type="image/avif">
-					<img src="Assets/Characters/Die Henne.png" class="char-img" alt="Die Henne">
+					<source srcset="Assets/Characters/avif/Die%20Henne.avif?v=8bb6d3c1a922" type="image/avif">
+					<img src="Assets/Characters/Die Henne.png?v=bb098b726625" class="char-img" alt="Die Henne">
 				</picture>
 
 				<div class="char-name">Die Henne</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Die%20Henne.avif" type="image/avif">
-						<img src="Assets/Characters/Die Henne.png" class="overlay-img" alt="Die Henne">
+						<source srcset="Assets/Characters/avif/Die%20Henne.avif?v=8bb6d3c1a922" type="image/avif">
+						<img src="Assets/Characters/Die Henne.png?v=bb098b726625" class="overlay-img" alt="Die Henne">
 					</picture>
 
 					<h3>Die Henne</h3>
@@ -108,16 +125,16 @@
 			<!-- Das Ei -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Das%20Ei.avif" type="image/avif">
-					<img src="Assets/Characters/Das Ei.png" class="char-img" alt="Das Ei">
+					<source srcset="Assets/Characters/avif/Das%20Ei.avif?v=4fae88bd18bc" type="image/avif">
+					<img src="Assets/Characters/Das Ei.png?v=a4a2fbb795d5" class="char-img" alt="Das Ei">
 				</picture>
 
 				<div class="char-name">Das Ei</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Das%20Ei.avif" type="image/avif">
-						<img src="Assets/Characters/Das Ei.png" class="overlay-img" alt="Das Ei">
+						<source srcset="Assets/Characters/avif/Das%20Ei.avif?v=4fae88bd18bc" type="image/avif">
+						<img src="Assets/Characters/Das Ei.png?v=a4a2fbb795d5" class="overlay-img" alt="Das Ei">
 					</picture>
 
 					<h3>Das Ei</h3>
@@ -131,16 +148,16 @@
 			<!-- Thalheim Heilwasser -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Thalheim%20Heilwasser.avif" type="image/avif">
-					<img src="Assets/Characters/Thalheim Heilwasser.png" class="char-img" alt="Thalheim Heilwasser">
+					<source srcset="Assets/Characters/avif/Thalheim%20Heilwasser.avif?v=31792500d338" type="image/avif">
+					<img src="Assets/Characters/Thalheim Heilwasser.png?v=fe8982236f2e" class="char-img" alt="Thalheim Heilwasser">
 				</picture>
 
 				<div class="char-name">Thalheim Heilwasser</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Thalheim%20Heilwasser.avif" type="image/avif">
-						<img src="Assets/Characters/Thalheim Heilwasser.png" class="overlay-img" alt="Thalheim Heilwasser">
+						<source srcset="Assets/Characters/avif/Thalheim%20Heilwasser.avif?v=31792500d338" type="image/avif">
+						<img src="Assets/Characters/Thalheim Heilwasser.png?v=fe8982236f2e" class="overlay-img" alt="Thalheim Heilwasser">
 					</picture>
 
 					<h3>Thalheim Heilwasser</h3>
@@ -154,16 +171,16 @@
 			<!-- Ramona -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Ramona.avif" type="image/avif">
-					<img src="Assets/Characters/Ramona.png" class="char-img" alt="Ramona">
+					<source srcset="Assets/Characters/avif/Ramona.avif?v=efee41e8586e" type="image/avif">
+					<img src="Assets/Characters/Ramona.png?v=6aeab3a71bd3" class="char-img" alt="Ramona">
 				</picture>
 
 				<div class="char-name">Ramona</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Ramona.avif" type="image/avif">
-						<img src="Assets/Characters/Ramona.png" class="overlay-img" alt="Ramona">
+						<source srcset="Assets/Characters/avif/Ramona.avif?v=efee41e8586e" type="image/avif">
+						<img src="Assets/Characters/Ramona.png?v=6aeab3a71bd3" class="overlay-img" alt="Ramona">
 					</picture>
 
 					<h3>Ramona</h3>
@@ -178,16 +195,16 @@
 			<!-- Staubsauginer -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Giner.avif" type="image/avif">
-					<img src="Assets/Characters/Giner.png" class="char-img" alt="Giner">
+					<source srcset="Assets/Characters/avif/Giner.avif?v=23f207eb5e1c" type="image/avif">
+					<img src="Assets/Characters/Giner.png?v=4e657fbe9a47" class="char-img" alt="Giner">
 				</picture>
 
 				<div class="char-name">Staubsauginer</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Giner.avif" type="image/avif">
-						<img src="Assets/Characters/Giner.png" class="overlay-img" alt="Giner">
+						<source srcset="Assets/Characters/avif/Giner.avif?v=23f207eb5e1c" type="image/avif">
+						<img src="Assets/Characters/Giner.png?v=4e657fbe9a47" class="overlay-img" alt="Giner">
 					</picture>
 
 					<h3>Staubsauginer</h3>
@@ -201,16 +218,16 @@
 			<!-- Tappeihnachtsmann -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Tappeihnachtsmann.avif" type="image/avif">
-					<img src="Assets/Characters/Tappeihnachtsmann.png" class="char-img" alt="Tappeihnachtsmann">
+					<source srcset="Assets/Characters/avif/Tappeihnachtsmann.avif?v=2433e40a5794" type="image/avif">
+					<img src="Assets/Characters/Tappeihnachtsmann.png?v=a1d172e29e79" class="char-img" alt="Tappeihnachtsmann">
 				</picture>
 
 				<div class="char-name">Tappeihnachtsmann</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Tappeihnachtsmann.avif" type="image/avif">
-						<img src="Assets/Characters/Tappeihnachtsmann.png" class="overlay-img" alt="Tappeihnachtsmann">
+						<source srcset="Assets/Characters/avif/Tappeihnachtsmann.avif?v=2433e40a5794" type="image/avif">
+						<img src="Assets/Characters/Tappeihnachtsmann.png?v=a1d172e29e79" class="overlay-img" alt="Tappeihnachtsmann">
 					</picture>
 
 					<h3>Tappeihnachtsmann</h3>
@@ -224,16 +241,16 @@
 			<!-- Steinermike -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Steinermike.avif" type="image/avif">
-					<img src="Assets/Characters/Steinermike.png" class="char-img" alt="Steinermike">
+					<source srcset="Assets/Characters/avif/Steinermike.avif?v=e73b5cacb625" type="image/avif">
+					<img src="Assets/Characters/Steinermike.png?v=9eb1a77af31f" class="char-img" alt="Steinermike">
 				</picture>
 
 				<div class="char-name">Steinermike</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Steinermike.avif" type="image/avif">
-						<img src="Assets/Characters/Steinermike.png" class="overlay-img" alt="Steinermike">
+						<source srcset="Assets/Characters/avif/Steinermike.avif?v=e73b5cacb625" type="image/avif">
+						<img src="Assets/Characters/Steinermike.png?v=9eb1a77af31f" class="overlay-img" alt="Steinermike">
 					</picture>
 
 					<h3>Steinermike</h3>
@@ -247,16 +264,16 @@
 			<!-- Felix Moses -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/Felix%20Moses.avif" type="image/avif">
-					<img src="Assets/Characters/Felix Moses.png" class="char-img" alt="Felix Moses">
+					<source srcset="Assets/Characters/avif/Felix%20Moses.avif?v=31f0d8224729" type="image/avif">
+					<img src="Assets/Characters/Felix Moses.png?v=ecd3918d58c8" class="char-img" alt="Felix Moses">
 				</picture>
 
 				<div class="char-name">Felix Moses</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/Felix%20Moses.avif" type="image/avif">
-						<img src="Assets/Characters/Felix Moses.png" class="overlay-img" alt="Felix Moses">
+						<source srcset="Assets/Characters/avif/Felix%20Moses.avif?v=31f0d8224729" type="image/avif">
+						<img src="Assets/Characters/Felix Moses.png?v=ecd3918d58c8" class="overlay-img" alt="Felix Moses">
 					</picture>
 
 					<h3>Felix Moses</h3>
@@ -270,16 +287,16 @@
 			<!-- Pöschl und Fröschl -->
 			<div class="char-card">
 				<picture>
-					<source srcset="Assets/Characters/avif/P%C3%B6schl%20und%20Fr%C3%B6schl.avif" type="image/avif">
-					<img src="Assets/Characters/Pöschl und Fröschl.png" class="char-img" alt="Pöschl und Fröschl">
+					<source srcset="Assets/Characters/avif/P%C3%B6schl%20und%20Fr%C3%B6schl.avif?v=bc2ebe9a148e" type="image/avif">
+					<img src="Assets/Characters/Pöschl und Fröschl.png?v=7121e275bf71" class="char-img" alt="Pöschl und Fröschl">
 				</picture>
 
 				<div class="char-name">Pöschl und Fröschl</div>
 
 				<div class="char-overlay">
 					<picture>
-						<source srcset="Assets/Characters/avif/P%C3%B6schl%20und%20Fr%C3%B6schl.avif" type="image/avif">
-						<img src="Assets/Characters/Pöschl und Fröschl.png" class="overlay-img" alt="Pöschl und Fröschl">
+						<source srcset="Assets/Characters/avif/P%C3%B6schl%20und%20Fr%C3%B6schl.avif?v=bc2ebe9a148e" type="image/avif">
+						<img src="Assets/Characters/Pöschl und Fröschl.png?v=7121e275bf71" class="overlay-img" alt="Pöschl und Fröschl">
 					</picture>
 
 					<h3>Pöschl und Fröschl</h3>
@@ -306,8 +323,8 @@
 			<!-- Genesaas -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Musik_Images/avif/Genesaas_Audio_Image.avif" type="image/avif">
-					<img src="Assets/Musik_Images/Genesaas_Audio_Image.png" title="Genesaas" alt="Genesaas">
+					<source srcset="Assets/Musik_Images/avif/Genesaas_Audio_Image.avif?v=4372e6f9fc26" type="image/avif">
+					<img src="Assets/Musik_Images/Genesaas_Audio_Image.png?v=09f558ed5f5c" title="Genesaas" alt="Genesaas" loading="eager" fetchpriority="high">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Genesaas.mp3" controls></audio>
 			</div>
@@ -315,8 +332,8 @@
 			<!-- Der Auszug aus Fiss-Ladis -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Musik_Images/avif/Auszug_aus_Fiss-Ladis_Audio_Image.avif" type="image/avif">
-					<img src="Assets/Musik_Images/Auszug_aus_Fiss-Ladis_Audio_Image.png" title="Der Auszug aus Fiss-Ladis" alt="Der Auszug aus Fiss-Ladis">
+					<source srcset="Assets/Musik_Images/avif/Auszug_aus_Fiss-Ladis_Audio_Image.avif?v=1c1b8dda4dff" type="image/avif">
+					<img src="Assets/Musik_Images/Auszug_aus_Fiss-Ladis_Audio_Image.png?v=85391a003656" title="Der Auszug aus Fiss-Ladis" alt="Der Auszug aus Fiss-Ladis">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Der Auszug aus Fiss-Ladis.mp3" controls></audio>
 			</div>
@@ -324,8 +341,8 @@
 			<!-- Levisaastikus -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Musik_Images/avif/Levisaastikus_Audio_Image.avif" type="image/avif">
-					<img src="Assets/Musik_Images/Levisaastikus_Audio_Image.png" title="Levisaastikus" alt="Levisaastikus">
+					<source srcset="Assets/Musik_Images/avif/Levisaastikus_Audio_Image.avif?v=7c3826858269" type="image/avif">
+					<img src="Assets/Musik_Images/Levisaastikus_Audio_Image.png?v=ed170ff58bfc" title="Levisaastikus" alt="Levisaastikus">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Levisaastikus.mp3" controls></audio>
 			</div>
@@ -333,8 +350,8 @@
 			<!-- David der Säufer -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Musik_Images/avif/David_der_Säufer_Image.avif" type="image/avif">
-					<img src="Assets/Musik_Images/David_der_Säufer_Image.png" title="David der Säufer" alt="David der Säufer">
+					<source srcset="Assets/Musik_Images/avif/David_der_Säufer_Image.avif?v=1241ab2c9119" type="image/avif">
+					<img src="Assets/Musik_Images/David_der_Säufer_Image.png?v=375be9f11716" title="David der Säufer" alt="David der Säufer">
 				</picture>
 				<audio preload="none" src="Assets/Musik/David der Säufer.mp3" controls></audio>
 			</div>
@@ -342,8 +359,8 @@
 			<!-- Silvana-unana Schöscher -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Musik_Images/avif/Silvana-unana_Schöscher_Audio_Image.avif" type="image/avif">
-					<img src="Assets/Musik_Images/Silvana-unana_Schöscher_Audio_Image.png" title="Silvana-unana Schöscher" alt="Silvana-unana Schöscher">
+					<source srcset="Assets/Musik_Images/avif/Silvana-unana_Schöscher_Audio_Image.avif?v=1c5886d3bb8d" type="image/avif">
+					<img src="Assets/Musik_Images/Silvana-unana_Schöscher_Audio_Image.png?v=8de2810b8226" title="Silvana-unana Schöscher" alt="Silvana-unana Schöscher">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Silvana-unana Schöscher.mp3" controls></audio>
 			</div>
@@ -351,8 +368,8 @@
 			<!-- Die traurige Botschaft -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Musik_Images/avif/Die_traurige_Botschaft_Image.avif" type="image/avif">
-					<img src="Assets/Musik_Images/Die_traurige_Botschaft_Image.png" title="Die traurige Botschaft" alt="Die traurige Botschaft">
+					<source srcset="Assets/Musik_Images/avif/Die_traurige_Botschaft_Image.avif?v=17601be288bf" type="image/avif">
+					<img src="Assets/Musik_Images/Die_traurige_Botschaft_Image.png?v=86da15251b84" title="Die traurige Botschaft" alt="Die traurige Botschaft">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Die traurige Botschaft.mp3" controls></audio>
 			</div>
@@ -360,8 +377,8 @@
 			<!-- Das letzte Abendsaas -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Musik_Images/avif/Das_letzte_Abendsaas_Image.avif" type="image/avif">
-					<img src="Assets/Musik_Images/Das_letzte_Abendsaas_Image.png" title="Das letzte Abendsaas" alt="Das letzte Abendsaas">
+					<source srcset="Assets/Musik_Images/avif/Das_letzte_Abendsaas_Image.avif?v=a9a4b7bdd31a" type="image/avif">
+					<img src="Assets/Musik_Images/Das_letzte_Abendsaas_Image.png?v=355cb7255aae" title="Das letzte Abendsaas" alt="Das letzte Abendsaas">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Das letzte Abendsaas.mp3" controls></audio>
 			</div>
@@ -377,8 +394,8 @@
 			<!-- Ramona liebt den Kontenplan -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Characters/avif/Ramona.avif" type="image/avif">
-					<img src="Assets/Characters/Ramona.png" title="Ramona liebt den Kontenplan" alt="Ramona liebt den Kontenplan">
+					<source srcset="Assets/Characters/avif/Ramona.avif?v=efee41e8586e" type="image/avif">
+					<img src="Assets/Characters/Ramona.png?v=6aeab3a71bd3" title="Ramona liebt den Kontenplan" alt="Ramona liebt den Kontenplan">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Ramona liebt den Kontenplan Song.mp3" controls></audio>
 			</div>
@@ -386,8 +403,8 @@
 			<!-- Staubsauginer -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Characters/avif/Giner.avif" type="image/avif">
-					<img src="Assets/Characters/Giner.png" title="Staubsauginer" alt="Staubsauginer">
+					<source srcset="Assets/Characters/avif/Giner.avif?v=23f207eb5e1c" type="image/avif">
+					<img src="Assets/Characters/Giner.png?v=4e657fbe9a47" title="Staubsauginer" alt="Staubsauginer">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Staubsauginer.mp3" controls></audio>
 			</div>
@@ -395,8 +412,8 @@
 			<!-- Tappeihnachtsmann -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Characters/avif/Tappeihnachtsmann.avif" type="image/avif">
-					<img src="Assets/Characters/Tappeihnachtsmann.png" title="Tappeihnachtsmann" alt="Tappeihnachtsmann">
+					<source srcset="Assets/Characters/avif/Tappeihnachtsmann.avif?v=2433e40a5794" type="image/avif">
+					<img src="Assets/Characters/Tappeihnachtsmann.png?v=a1d172e29e79" title="Tappeihnachtsmann" alt="Tappeihnachtsmann">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Tappei-Weihnachtsmann.mp3" controls></audio>
 			</div>
@@ -404,8 +421,8 @@
 			<!-- Pöschl und Fröschl -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Characters/avif/P%C3%B6schl%20und%20Fr%C3%B6schl.avif" type="image/avif">
-					<img src="Assets/Characters/Pöschl und Fröschl.png" title="Pöschl und Fröschl" alt="Pöschl und Fröschl">
+					<source srcset="Assets/Characters/avif/P%C3%B6schl%20und%20Fr%C3%B6schl.avif?v=bc2ebe9a148e" type="image/avif">
+					<img src="Assets/Characters/Pöschl und Fröschl.png?v=7121e275bf71" title="Pöschl und Fröschl" alt="Pöschl und Fröschl">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Pöschl und sein Fröschl Song.mp3" controls></audio>
 			</div>
@@ -413,8 +430,8 @@
 			<!-- Steinermike -->
 			<div class="audio-box">
 				<picture>
-					<source srcset="Assets/Characters/avif/Steinermike.avif" type="image/avif">
-					<img src="Assets/Characters/Steinermike.png" title="Steinermike" alt="Steinermike">
+					<source srcset="Assets/Characters/avif/Steinermike.avif?v=e73b5cacb625" type="image/avif">
+					<img src="Assets/Characters/Steinermike.png?v=9eb1a77af31f" title="Steinermike" alt="Steinermike">
 				</picture>
 				<audio preload="none" src="Assets/Musik/Steinermike Song.mp3" controls></audio>
 			</div>
