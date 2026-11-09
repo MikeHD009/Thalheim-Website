@@ -1,0 +1,12 @@
+# Thalheim Gemeinschaft
+
+> Deutschsprachiges Spaßprojekt mit frei erfundenen Fantasy-Geschichten, Charakteren und Liedern aus Thalheim.
+
+Die Gemeinschaft wurde von den Urthalheimern gegründet. Die Charaktere sind fiktiv, basieren teilweise aber auf echten Personen. Die Geschichten sind humorvoll gemeint und sollen niemanden beleidigen. Aussagen über die Figuren gehören zur erfundenen Welt und sind keine Tatsachenbehauptungen über reale Personen.
+
+Die Website besteht aus einer einzelnen Seite mit Informationen zur Gemeinschaft, Charakterporträts und Hintergrundgeschichten, dem Geschichten-Dokument „Die Biba“, der „Gesungenen Biba“ und den „Liedern der Urthalheimer“. Bilder wurden teilweise mit ChatGPT und Bylo AI erstellt; die Lieder stammen von Suno AI.
+
+## Inhalte
+
+- [Thalheim Gemeinschaft](https://silvana-unana.com/): Startseite mit allen Charakteren, Hintergrundgeschichten und abspielbaren Liedern.
+- [Die Biba](https://silvana-unana.com/Assets/Biba_Word/Die%20Biba.docx): Geschichten als herunterladbares Word-Dokument (DOCX).
